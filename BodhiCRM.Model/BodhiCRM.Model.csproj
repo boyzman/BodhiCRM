@@ -52,6 +52,7 @@
     <Compile Include="NAVIGATION.cs" />
     <Compile Include="PATIENT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SMS_MESSAGE.cs" />
     <Compile Include="SMS_TEMPLATE.cs" />
     <Compile Include="SYS_CONFIG.cs" />
     <Compile Include="VISIT.cs" />

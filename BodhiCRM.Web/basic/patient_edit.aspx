@@ -138,7 +138,7 @@
   </dl>
    <dl>
     <dt>手机号码</dt>
-    <dd><asp:TextBox ID="txtTel" runat="server" CssClass="input normal" datatype="lm" sucmsg=" " ajaxurl="../tools/admin_ajax.ashx?action=patient_mobile_validate"></asp:TextBox></dd>
+    <dd><asp:TextBox ID="txtTel" runat="server" CssClass="input normal" datatype="m" sucmsg=" " ajaxurl="../tools/admin_ajax.ashx?action=patient_mobile_validate"></asp:TextBox></dd>
   </dl>
     <dl>
     <dt>EMAIL地址</dt>

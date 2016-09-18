@@ -290,7 +290,29 @@ namespace BodhiCRM.DAL
 			}
 		}
 
+        /// <summary>
+        /// 得到一个对象实体
+        /// </summary>
+        public BodhiCRM.Model.PATIENT GetModelByMobile(string MOBILE_TEL)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select PATIENT_SN,CNAME,ENAME,GENDER_ID,BIRTH_DATE,HEIGHT,WEIGHT,HOME_TEL,MOBILE_TEL,E_MAIL,HOME_PROVINCE_ID,HOME_CITY_ID,HOME_SECTION_ID,ADDRESS,POST_CODE,ID_CARD_CODE,CREATE_USER_ID,CREATE_TIME,MODIFIED_USER,MODIFIED_TIME,REMARK,STATUS from TB_PATIENT ");
+            strSql.Append(" where MOBILE_TEL=:MOBILE_TEL ");
+            OracleParameter[] parameters = {
+					new OracleParameter(":MOBILE_TEL", OracleType.VarChar,30)			};
+            parameters[0].Value = MOBILE_TEL;
 
+            BodhiCRM.Model.PATIENT model = new BodhiCRM.Model.PATIENT();
+            DataSet ds = DbHelperOra.Query(strSql.ToString(), parameters);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                return DataRowToModel(ds.Tables[0].Rows[0]);
+            }
+            else
+            {
+                return null;
+            }
+        }
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>

@@ -262,6 +262,7 @@
     <Content Include="skin\loading.gif" />
     <Content Include="skin\msgbox.css" />
     <Content Include="skin\tabStyle.css" />
+    <Content Include="sms\sms_message_list.aspx" />
     <Content Include="sms\sms_send.aspx" />
     <Content Include="sms\sms_template_edit.aspx" />
     <Content Include="sms\sms_template_list.aspx" />
@@ -523,6 +524,13 @@
     </Compile>
     <Compile Include="settings\sys_config.aspx.designer.cs">
       <DependentUpon>sys_config.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sms\sms_message_list.aspx.cs">
+      <DependentUpon>sms_message_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sms\sms_message_list.aspx.designer.cs">
+      <DependentUpon>sms_message_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="sms\sms_send.aspx.cs">
       <DependentUpon>sms_send.aspx</DependentUpon>

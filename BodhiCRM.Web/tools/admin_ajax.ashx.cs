@@ -324,7 +324,7 @@ namespace BodhiCRM.Web.tools
             }
             //开始发送
             string msg = string.Empty;
-            bool result = new BLL.().Send(mobiles, content, 2, out msg);
+            bool result = new BLL.SMS_MESSAGE().Send(mobiles,"", content,null,"" , out msg);
             if (result)
             {
                 context.Response.Write("{\"status\": 1, \"msg\": \"" + msg + "\"}");

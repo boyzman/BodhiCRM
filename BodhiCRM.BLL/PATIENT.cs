@@ -85,7 +85,14 @@ namespace BodhiCRM.BLL
 			
 			return dal.GetModel(PATIENT_SN);
 		}
+        /// <summary>
+        /// 得到一个对象实体
+        /// </summary>
+        public BodhiCRM.Model.PATIENT GetModelByMobile(string MOBILE_TEL)
+        {
 
+            return dal.GetModelByMobile(MOBILE_TEL);
+        }
 		/// <summary>
 		/// 得到一个对象实体，从缓存中
 		/// </summary>

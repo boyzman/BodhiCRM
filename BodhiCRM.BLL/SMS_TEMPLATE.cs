@@ -77,6 +77,7 @@ namespace BodhiCRM.BLL
 		{
 			return dal.GetModel(ID);
 		}
+        
         /// <summary>
         /// 得到一个对象实体
         /// </summary>

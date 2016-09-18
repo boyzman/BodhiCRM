@@ -38,6 +38,7 @@ namespace BodhiCRM.Web.sms
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             BodhiCRM.Web.SMSService.TemplateSMSServiceClient smsClient = new SMSService.TemplateSMSServiceClient();
+            BLL.SMS_MESSAGE bll = new BLL.SMS_MESSAGE();
             string sMobile = Request.Form["hdMobile"].ToString();
             
             //string sMobile=hidMobile.Value;
@@ -47,35 +48,40 @@ namespace BodhiCRM.Web.sms
                 JscriptMsg("没有接收方！", "back");
                 return;
             }
-            string[] arrMobile = sMobile.Split(',');
-            string[] arrName = sName.Split(',');
-            int i = 0;
-            int success = 0;
-            int fail = 0;
-            foreach (string s in arrMobile)
-            {
-                if(!string.IsNullOrEmpty(s))
-                {
-                    String key = "TestSMS";
-                    String toTel = s;
-                    String[] toDate = new String[] { arrName[i], "菩提医疗", "" };
-                    String outMsg = String.Empty;
-                    bool state = smsClient.SendTemplateSMSS(key, toTel, toDate, out outMsg);
-                    if (state)
-                    {
-                        success++;
-                        JscriptMsg("发送信息成功"+success+"条", "back");
+            string[] toDate = new string[] { "菩提医疗", "" };
+            List<System.String> listS = new List<System.String>(toDate);
+            string outMsg = string.Empty;
+            bool result = bll.Send(sMobile, sName, txtContent.Text, listS, "TestSMS", out outMsg);
+            JscriptMsg(outMsg, "back");
+            //string[] arrMobile = sMobile.Split(',');
+            //string[] arrName = sName.Split(',');
+            //int i = 0;
+            //int success = 0;
+            //int fail = 0;
+            //foreach (string s in arrMobile)
+            //{
+            //    if(!string.IsNullOrEmpty(s))
+            //    {
+            //        String key = "TestSMS";
+            //        String toTel = s;
+            //        String[] toDate = new String[] { arrName[i], "菩提医疗", "" };
+            //        String outMsg = String.Empty;
+            //        bool state = smsClient.SendTemplateSMSS(key, toTel, toDate, out outMsg);
+            //        if (state)
+            //        {
+            //            success++;
+            //            JscriptMsg("发送信息成功"+success+"条", "back");
                         
-                    }
-                    else
-                    {
-                        fail++;
-                        JscriptMsg("发送信息失败" + fail + "条", "back");
-                    }
+            //        }
+            //        else
+            //        {
+            //            fail++;
+            //            JscriptMsg("发送信息失败" + fail + "条", "back");
+            //        }
                    
-                }
-                i++;
-            }
+            //    }
+            //    i++;
+            //}
             
         }
     }
