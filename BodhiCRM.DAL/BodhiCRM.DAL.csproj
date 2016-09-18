@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{534B3F7F-5565-49DE-8B93-32DD821FE13B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BodhiCRM.DAL</RootNamespace>
+    <AssemblyName>BodhiCRM.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BIRTHCARE.cs" />
+    <Compile Include="DEPARTMENT.cs" />
+    <Compile Include="EMPLOYEE.cs" />
+    <Compile Include="FAMILY.cs" />
+    <Compile Include="HOMECARE.cs" />
+    <Compile Include="HOSPITAL.cs" />
+    <Compile Include="MANAGER.cs" />
+    <Compile Include="MANAGER_LOG.cs" />
+    <Compile Include="MANAGER_ROLE.cs" />
+    <Compile Include="MANAGER_ROLE_VALUE.cs" />
+    <Compile Include="NAVIGATION.cs" />
+    <Compile Include="OUTPATIENT.cs" />
+    <Compile Include="PATIENT.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SMS_TEMPLATE.cs" />
+    <Compile Include="SYS_CONFIG.cs" />
+    <Compile Include="VISIT.cs" />
+    <Compile Include="VISIT_DETAIL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BodhiCRM.Common\BodhiCRM.Common.csproj">
+      <Project>{2c4effe3-64aa-4421-ad2a-1c20bdfb12cf}</Project>
+      <Name>BodhiCRM.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BodhiCRM.DBUtility\BodhiCRM.DBUtility.csproj">
+      <Project>{2435c11f-8627-40b9-a25d-ea005a937fb0}</Project>
+      <Name>BodhiCRM.DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BodhiCRM.Model\BodhiCRM.Model.csproj">
+      <Project>{4b385d42-d9a6-46dc-9569-59b7cce3081b}</Project>
+      <Name>BodhiCRM.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

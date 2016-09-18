@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D0D3797B-53FF-4FB1-872E-B346683D5766}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BodhiCRM.Web</RootNamespace>
+    <AssemblyName>BodhiCRM.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="basic\archives_list.aspx" />
+    <Content Include="basic\department_edit.aspx" />
+    <Content Include="basic\department_list.aspx" />
+    <Content Include="basic\homecare_edit.aspx" />
+    <Content Include="basic\homecare_list.aspx" />
+    <Content Include="basic\employee_list.aspx" />
+    <Content Include="basic\family_edit.aspx" />
+    <Content Include="basic\outpatient_list.aspx" />
+    <Content Include="basic\employee_edit.aspx" />
+    <Content Include="basic\patient_edit.aspx" />
+    <Content Include="basic\family_list.aspx" />
+    <Content Include="basic\patient_list.aspx" />
+    <Content Include="dialog\dialog_patient_multi.aspx" />
+    <Content Include="dialog\dialog_patient.aspx" />
+    <Content Include="dialog\dialog_visit_update.aspx" />
+    <Content Include="js\dateformat.js" />
+    <Content Include="js\JSLoading.js" />
+    <Content Include="js\laytab.js" />
+    <Content Include="js\laymain.js" />
+    <Content Include="js\msgbox.js" />
+    <Content Include="scripts\artdialog\dialog-min.js" />
+    <Content Include="scripts\artdialog\dialog-plus-min.js" />
+    <Content Include="scripts\artdialog\ui-dialog.css" />
+    <Content Include="scripts\datepicker\calendar.js" />
+    <Content Include="scripts\datepicker\lang\en.js" />
+    <Content Include="scripts\datepicker\lang\zh-cn.js" />
+    <Content Include="scripts\datepicker\lang\zh-tw.js" />
+    <Content Include="scripts\datepicker\skin\datePicker.gif" />
+    <Content Include="scripts\datepicker\skin\default\datepicker.css" />
+    <Content Include="scripts\datepicker\skin\default\img.gif" />
+    <Content Include="scripts\datepicker\skin\WdatePicker.css" />
+    <Content Include="scripts\datepicker\skin\whyGreen\bg.jpg" />
+    <Content Include="scripts\datepicker\skin\whyGreen\datepicker.css" />
+    <Content Include="scripts\datepicker\skin\whyGreen\img.gif" />
+    <Content Include="scripts\datepicker\WdatePicker.js" />
+    <Content Include="scripts\fullcalendar\fullcalendar.css" />
+    <Content Include="scripts\fullcalendar\fullcalendar.js" />
+    <Content Include="scripts\fullcalendar\fullcalendar.min.css" />
+    <Content Include="scripts\fullcalendar\fullcalendar.min.js" />
+    <Content Include="scripts\fullcalendar\fullcalendar.print.css" />
+    <Content Include="scripts\fullcalendar\gcal.js" />
+    <Content Include="scripts\fullcalendar\lib\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="scripts\fullcalendar\lib\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="scripts\fullcalendar\lib\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="scripts\fullcalendar\lib\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="scripts\fullcalendar\lib\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="scripts\fullcalendar\lib\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="scripts\fullcalendar\lib\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="scripts\fullcalendar\lib\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="scripts\fullcalendar\lib\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="scripts\fullcalendar\lib\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="scripts\fullcalendar\lib\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="scripts\fullcalendar\lib\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="scripts\fullcalendar\lib\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="scripts\fullcalendar\lib\cupertino\jquery-ui.min.css" />
+    <Content Include="scripts\fullcalendar\lib\jquery-ui.min.js" />
+    <Content Include="scripts\fullcalendar\lib\jquery.min.js" />
+    <Content Include="scripts\fullcalendar\lib\moment.min.js" />
+    <Content Include="scripts\fullcalendar\locale-all.js" />
+    <Content Include="scripts\fullcalendar\locale\ar-ma.js" />
+    <Content Include="scripts\fullcalendar\locale\ar-sa.js" />
+    <Content Include="scripts\fullcalendar\locale\ar-tn.js" />
+    <Content Include="scripts\fullcalendar\locale\ar.js" />
+    <Content Include="scripts\fullcalendar\locale\bg.js" />
+    <Content Include="scripts\fullcalendar\locale\ca.js" />
+    <Content Include="scripts\fullcalendar\locale\cs.js" />
+    <Content Include="scripts\fullcalendar\locale\da.js" />
+    <Content Include="scripts\fullcalendar\locale\de-at.js" />
+    <Content Include="scripts\fullcalendar\locale\de.js" />
+    <Content Include="scripts\fullcalendar\locale\el.js" />
+    <Content Include="scripts\fullcalendar\locale\en-au.js" />
+    <Content Include="scripts\fullcalendar\locale\en-ca.js" />
+    <Content Include="scripts\fullcalendar\locale\en-gb.js" />
+    <Content Include="scripts\fullcalendar\locale\en-ie.js" />
+    <Content Include="scripts\fullcalendar\locale\en-nz.js" />
+    <Content Include="scripts\fullcalendar\locale\es-do.js" />
+    <Content Include="scripts\fullcalendar\locale\es.js" />
+    <Content Include="scripts\fullcalendar\locale\eu.js" />
+    <Content Include="scripts\fullcalendar\locale\fa.js" />
+    <Content Include="scripts\fullcalendar\locale\fi.js" />
+    <Content Include="scripts\fullcalendar\locale\fr-ca.js" />
+    <Content Include="scripts\fullcalendar\locale\fr-ch.js" />
+    <Content Include="scripts\fullcalendar\locale\fr.js" />
+    <Content Include="scripts\fullcalendar\locale\gl.js" />
+    <Content Include="scripts\fullcalendar\locale\he.js" />
+    <Content Include="scripts\fullcalendar\locale\hi.js" />
+    <Content Include="scripts\fullcalendar\locale\hr.js" />
+    <Content Include="scripts\fullcalendar\locale\hu.js" />
+    <Content Include="scripts\fullcalendar\locale\id.js" />
+    <Content Include="scripts\fullcalendar\locale\is.js" />
+    <Content Include="scripts\fullcalendar\locale\it.js" />
+    <Content Include="scripts\fullcalendar\locale\ja.js" />
+    <Content Include="scripts\fullcalendar\locale\ko.js" />
+    <Content Include="scripts\fullcalendar\locale\lb.js" />
+    <Content Include="scripts\fullcalendar\locale\lt.js" />
+    <Content Include="scripts\fullcalendar\locale\lv.js" />
+    <Content Include="scripts\fullcalendar\locale\mk.js" />
+    <Content Include="scripts\fullcalendar\locale\ms-my.js" />
+    <Content Include="scripts\fullcalendar\locale\ms.js" />
+    <Content Include="scripts\fullcalendar\locale\nb.js" />
+    <Content Include="scripts\fullcalendar\locale\nl.js" />
+    <Content Include="scripts\fullcalendar\locale\nn.js" />
+    <Content Include="scripts\fullcalendar\locale\pl.js" />
+    <Content Include="scripts\fullcalendar\locale\pt-br.js" />
+    <Content Include="scripts\fullcalendar\locale\pt.js" />
+    <Content Include="scripts\fullcalendar\locale\ro.js" />
+    <Content Include="scripts\fullcalendar\locale\ru.js" />
+    <Content Include="scripts\fullcalendar\locale\sk.js" />
+    <Content Include="scripts\fullcalendar\locale\sl.js" />
+    <Content Include="scripts\fullcalendar\locale\sr-cyrl.js" />
+    <Content Include="scripts\fullcalendar\locale\sr.js" />
+    <Content Include="scripts\fullcalendar\locale\sv.js" />
+    <Content Include="scripts\fullcalendar\locale\th.js" />
+    <Content Include="scripts\fullcalendar\locale\tr.js" />
+    <Content Include="scripts\fullcalendar\locale\uk.js" />
+    <Content Include="scripts\fullcalendar\locale\vi.js" />
+    <Content Include="scripts\fullcalendar\locale\zh-cn.js" />
+    <Content Include="scripts\fullcalendar\locale\zh-tw.js" />
+    <Content Include="scripts\jquery\jquery-1.11.2.min.js" />
+    <Content Include="scripts\jquery\jquery.form.min.js" />
+    <Content Include="scripts\jquery\jquery.jcrop.min.js" />
+    <Content Include="scripts\jquery\jquery.jqzoom.js" />
+    <Content Include="scripts\jquery\jquery.lazyload.min.js" />
+    <Content Include="scripts\jquery\jquery.nicescroll.js" />
+    <Content Include="scripts\jquery\jquery.pagination.js" />
+    <Content Include="scripts\jquery\PCASClass.js" />
+    <Content Include="scripts\jquery\Validform_v5.3.2_min.js" />
+    <Content Include="scripts\Highcharts\adapters\standalone-framework.js" />
+    <Content Include="scripts\Highcharts\adapters\standalone-framework.src.js" />
+    <Content Include="scripts\Highcharts\highcharts-3d.js" />
+    <Content Include="scripts\Highcharts\highcharts-3d.src.js" />
+    <Content Include="scripts\Highcharts\highcharts-more.js" />
+    <Content Include="scripts\Highcharts\highcharts-more.src.js" />
+    <Content Include="scripts\Highcharts\highcharts.js" />
+    <Content Include="scripts\Highcharts\highcharts.src.js" />
+    <Content Include="scripts\Highcharts\modules\boost.js" />
+    <Content Include="scripts\Highcharts\modules\boost.src.js" />
+    <Content Include="scripts\Highcharts\modules\broken-axis.js" />
+    <Content Include="scripts\Highcharts\modules\broken-axis.src.js" />
+    <Content Include="scripts\Highcharts\modules\canvas-tools.js" />
+    <Content Include="scripts\Highcharts\modules\canvas-tools.src.js" />
+    <Content Include="scripts\Highcharts\modules\data.js" />
+    <Content Include="scripts\Highcharts\modules\data.src.js" />
+    <Content Include="scripts\Highcharts\modules\drilldown.js" />
+    <Content Include="scripts\Highcharts\modules\drilldown.src.js" />
+    <Content Include="scripts\Highcharts\modules\exporting.js" />
+    <Content Include="scripts\Highcharts\modules\exporting.src.js" />
+    <Content Include="scripts\Highcharts\modules\funnel.js" />
+    <Content Include="scripts\Highcharts\modules\funnel.src.js" />
+    <Content Include="scripts\Highcharts\modules\heatmap.js" />
+    <Content Include="scripts\Highcharts\modules\heatmap.src.js" />
+    <Content Include="scripts\Highcharts\modules\no-data-to-display.js" />
+    <Content Include="scripts\Highcharts\modules\no-data-to-display.src.js" />
+    <Content Include="scripts\Highcharts\modules\offline-exporting.js" />
+    <Content Include="scripts\Highcharts\modules\offline-exporting.src.js" />
+    <Content Include="scripts\Highcharts\modules\solid-gauge.js" />
+    <Content Include="scripts\Highcharts\modules\solid-gauge.src.js" />
+    <Content Include="scripts\Highcharts\modules\treemap.js" />
+    <Content Include="scripts\Highcharts\modules\treemap.src.js" />
+    <Content Include="scripts\Highcharts\themes\dark-blue.js" />
+    <Content Include="scripts\Highcharts\themes\dark-green.js" />
+    <Content Include="scripts\Highcharts\themes\dark-unica.js" />
+    <Content Include="scripts\Highcharts\themes\gray.js" />
+    <Content Include="scripts\Highcharts\themes\grid-light.js" />
+    <Content Include="scripts\Highcharts\themes\grid.js" />
+    <Content Include="scripts\Highcharts\themes\sand-signika.js" />
+    <Content Include="scripts\Highcharts\themes\skies.js" />
+    <Content Include="scripts\jqwidgets\jquery.js" />
+    <Content Include="scripts\jqwidgets\jqx.base.css" />
+    <Content Include="scripts\jqwidgets\jqxcheckbox.js" />
+    <Content Include="scripts\jqwidgets\jqxcore.js" />
+    <Content Include="scripts\jqwidgets\jqxsplitter.js" />
+    <Content Include="scripts\jqwidgets\jqxtabs.js" />
+    <Content Include="scripts\print\jQuery.print.js" />
+    <Content Include="scripts\Tabs\contabs.min.js" />
+    <Content Include="scripts\Tabs\easyui.css" />
+    <Content Include="scripts\Tabs\jQuery.easyui.js" />
+    <Content Include="scripts\Tabs\jquery.js" />
+    <Content Include="scripts\Tabs\jquery-ui.css" />
+    <Content Include="scripts\Tabs\jquery-ui.js" />
+    <Content Include="scripts\jqwidgets\jquerytabs.html" />
+    <Content Include="scripts\Tabs\outlook2.js" />
+    <Content Include="scripts\Tabs\style.min.css" />
+    <Content Include="scripts\Tabs\tabs.html" />
+    <Content Include="scripts\webuploader\uploader.swf" />
+    <Content Include="scripts\webuploader\webuploader.min.js" />
+    <Content Include="Service References\SMSService\BodhiCRM.Web.SMSService.SendTemplateSMSSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\SMSService\TemplateSMSService.disco" />
+    <None Include="Service References\SMSService\configuration91.svcinfo" />
+    <None Include="Service References\SMSService\configuration.svcinfo" />
+    <None Include="Service References\SMSService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="skin\default\arrows.png" />
+    <Content Include="skin\default\nav\mail.png" />
+    <Content Include="skin\default\pagination.css" />
+    <Content Include="skin\default\row_bkg.png" />
+    <Content Include="skin\loading.gif" />
+    <Content Include="skin\msgbox.css" />
+    <Content Include="skin\tabStyle.css" />
+    <Content Include="sms\sms_send.aspx" />
+    <Content Include="sms\sms_template_edit.aspx" />
+    <Content Include="sms\sms_template_list.aspx" />
+    <Content Include="test\order.aspx" />
+    <Content Include="tools\admin_ajax.ashx" />
+    <Content Include="tools\upload_ajax.ashx" />
+    <None Include="Service References\SMSService\TemplateSMSService.wsdl" />
+    <None Include="Service References\SMSService\TemplateSMSService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SMSService\TemplateSMSService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SMSService\TemplateSMSService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="skin\default\logo1.gif" />
+    <Content Include="skin\default\logo1.png" />
+    <Content Include="skin\default\nav\logo1.gif" />
+    <Content Include="visit\birthcare_edit.aspx" />
+    <Content Include="visit\birthcare_list.aspx" />
+    <Content Include="visit\visit_analysis.aspx" />
+    <Content Include="visit\visit_calendar.aspx" />
+    <Content Include="visit\visit_detail_edit.aspx" />
+    <Content Include="visit\visit_edit.aspx" />
+    <Content Include="visit\visit_list.aspx" />
+    <Content Include="xmlconfig\sys.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="center.aspx" />
+    <Content Include="ie6update.html" />
+    <Content Include="index.aspx" />
+    <Content Include="js\common.js" />
+    <Content Include="js\layindex.js" />
+    <Content Include="js\uploader.js" />
+    <Content Include="login.aspx" />
+    <Content Include="manager\manager_edit.aspx" />
+    <Content Include="manager\manager_list.aspx" />
+    <Content Include="manager\manager_log.aspx" />
+    <Content Include="manager\manager_pwd.aspx" />
+    <Content Include="manager\role_edit.aspx" />
+    <Content Include="manager\role_list.aspx" />
+    <Content Include="settings\nav_edit.aspx" />
+    <Content Include="settings\nav_list.aspx" />
+    <Content Include="settings\sys_config.aspx" />
+    <Content Include="skin\base.css" />
+    <Content Include="skin\default\ie_update.jpg" />
+    <Content Include="skin\default\logo.png" />
+    <Content Include="skin\default\nav\home.png" />
+    <Content Include="skin\default\nav\order.png" />
+    <Content Include="skin\default\nav\pus.png" />
+    <Content Include="skin\default\nav\sys.png" />
+    <Content Include="skin\default\nav\user.png" />
+    <Content Include="skin\default\order_speed.gif" />
+    <Content Include="skin\default\skin_icons.png" />
+    <Content Include="skin\default\style.css" />
+    <Content Include="skin\default\valid_icons.png" />
+    <Content Include="skin\layout.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="basic\archives_list.aspx.cs">
+      <DependentUpon>archives_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="basic\archives_list.aspx.designer.cs">
+      <DependentUpon>archives_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="basic\department_edit.aspx.cs">
+      <DependentUpon>department_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="basic\department_edit.aspx.designer.cs">
+      <DependentUpon>department_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="basic\department_list.aspx.cs">
+      <DependentUpon>department_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="basic\department_list.aspx.designer.cs">
+      <DependentUpon>department_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="basic\homecare_edit.aspx.cs">
+      <DependentUpon>homecare_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="basic\homecare_edit.aspx.designer.cs">
+      <DependentUpon>homecare_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="basic\homecare_list.aspx.cs">
+      <DependentUpon>homecare_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="basic\homecare_list.aspx.designer.cs">
+      <DependentUpon>homecare_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="basic\employee_list.aspx.cs">
+      <DependentUpon>employee_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="basic\employee_list.aspx.designer.cs">
+      <DependentUpon>employee_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="basic\family_edit.aspx.cs">
+      <DependentUpon>family_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="basic\family_edit.aspx.designer.cs">
+      <DependentUpon>family_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="basic\outpatient_list.aspx.cs">
+      <DependentUpon>outpatient_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="basic\outpatient_list.aspx.designer.cs">
+      <DependentUpon>outpatient_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="basic\employee_edit.aspx.cs">
+      <DependentUpon>employee_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="basic\employee_edit.aspx.designer.cs">
+      <DependentUpon>employee_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="basic\patient_edit.aspx.cs">
+      <DependentUpon>patient_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="basic\patient_edit.aspx.designer.cs">
+      <DependentUpon>patient_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="basic\family_list.aspx.cs">
+      <DependentUpon>family_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="basic\family_list.aspx.designer.cs">
+      <DependentUpon>family_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="basic\patient_list.aspx.cs">
+      <DependentUpon>patient_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="basic\patient_list.aspx.designer.cs">
+      <DependentUpon>patient_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="center.aspx.cs">
+      <DependentUpon>center.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="center.aspx.designer.cs">
+      <DependentUpon>center.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dialog\dialog_patient_multi.aspx.cs">
+      <DependentUpon>dialog_patient_multi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dialog\dialog_patient_multi.aspx.designer.cs">
+      <DependentUpon>dialog_patient_multi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dialog\dialog_patient.aspx.cs">
+      <DependentUpon>dialog_patient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dialog\dialog_patient.aspx.designer.cs">
+      <DependentUpon>dialog_patient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dialog\dialog_visit_update.aspx.cs">
+      <DependentUpon>dialog_visit_update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dialog\dialog_visit_update.aspx.designer.cs">
+      <DependentUpon>dialog_visit_update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\manager_edit.aspx.cs">
+      <DependentUpon>manager_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\manager_edit.aspx.designer.cs">
+      <DependentUpon>manager_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\manager_list.aspx.cs">
+      <DependentUpon>manager_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\manager_list.aspx.designer.cs">
+      <DependentUpon>manager_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\manager_log.aspx.cs">
+      <DependentUpon>manager_log.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\manager_log.aspx.designer.cs">
+      <DependentUpon>manager_log.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\manager_pwd.aspx.cs">
+      <DependentUpon>manager_pwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\manager_pwd.aspx.designer.cs">
+      <DependentUpon>manager_pwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\role_edit.aspx.cs">
+      <DependentUpon>role_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\role_edit.aspx.designer.cs">
+      <DependentUpon>role_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\role_list.aspx.cs">
+      <DependentUpon>role_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\role_list.aspx.designer.cs">
+      <DependentUpon>role_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\SMSService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="settings\nav_edit.aspx.cs">
+      <DependentUpon>nav_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="settings\nav_edit.aspx.designer.cs">
+      <DependentUpon>nav_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="settings\nav_list.aspx.cs">
+      <DependentUpon>nav_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="settings\nav_list.aspx.designer.cs">
+      <DependentUpon>nav_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="settings\sys_config.aspx.cs">
+      <DependentUpon>sys_config.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="settings\sys_config.aspx.designer.cs">
+      <DependentUpon>sys_config.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sms\sms_send.aspx.cs">
+      <DependentUpon>sms_send.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sms\sms_send.aspx.designer.cs">
+      <DependentUpon>sms_send.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sms\sms_template_edit.aspx.cs">
+      <DependentUpon>sms_template_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sms\sms_template_edit.aspx.designer.cs">
+      <DependentUpon>sms_template_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sms\sms_template_list.aspx.cs">
+      <DependentUpon>sms_template_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sms\sms_template_list.aspx.designer.cs">
+      <DependentUpon>sms_template_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test\order.aspx.cs">
+      <DependentUpon>order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test\order.aspx.designer.cs">
+      <DependentUpon>order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tools\admin_ajax.ashx.cs">
+      <DependentUpon>admin_ajax.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="tools\upload_ajax.ashx.cs">
+      <DependentUpon>upload_ajax.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="visit\birthcare_edit.aspx.cs">
+      <DependentUpon>birthcare_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visit\birthcare_edit.aspx.designer.cs">
+      <DependentUpon>birthcare_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visit\birthcare_list.aspx.cs">
+      <DependentUpon>birthcare_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visit\birthcare_list.aspx.designer.cs">
+      <DependentUpon>birthcare_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visit\visit_analysis.aspx.cs">
+      <DependentUpon>visit_analysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visit\visit_analysis.aspx.designer.cs">
+      <DependentUpon>visit_analysis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visit\visit_calendar.aspx.cs">
+      <DependentUpon>visit_calendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visit\visit_calendar.aspx.designer.cs">
+      <DependentUpon>visit_calendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visit\visit_detail_edit.aspx.cs">
+      <DependentUpon>visit_detail_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visit\visit_detail_edit.aspx.designer.cs">
+      <DependentUpon>visit_detail_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visit\visit_edit.aspx.cs">
+      <DependentUpon>visit_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visit\visit_edit.aspx.designer.cs">
+      <DependentUpon>visit_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visit\visit_list.aspx.cs">
+      <DependentUpon>visit_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visit\visit_list.aspx.designer.cs">
+      <DependentUpon>visit_list.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="skin\Bodhicss\" />
+    <Folder Include="upload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BodhiCRM.BLL\BodhiCRM.BLL.csproj">
+      <Project>{cc2c4d96-ae35-41ce-a442-63c77a18c533}</Project>
+      <Name>BodhiCRM.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BodhiCRM.Common\BodhiCRM.Common.csproj">
+      <Project>{2c4effe3-64aa-4421-ad2a-1c20bdfb12cf}</Project>
+      <Name>BodhiCRM.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BodhiCRM.DBUtility\BodhiCRM.DBUtility.csproj">
+      <Project>{2435c11f-8627-40b9-a25d-ea005a937fb0}</Project>
+      <Name>BodhiCRM.DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BodhiCRM.Model\BodhiCRM.Model.csproj">
+      <Project>{4b385d42-d9a6-46dc-9569-59b7cce3081b}</Project>
+      <Name>BodhiCRM.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BodhiCRM.Web.Aid\BodhiCRM.Web.Aid.csproj">
+      <Project>{2e62b267-0a65-4074-aa4f-498934a5bb8e}</Project>
+      <Name>BodhiCRM.Web.Aid</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SMSService\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57414</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55452/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

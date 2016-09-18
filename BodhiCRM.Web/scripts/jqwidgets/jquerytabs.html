@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="jqx.base.css" type="text/css" />
+    
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jqxcore.js"></script>
+    <script type="text/javascript" src="jqxtabs.js"></script>
+    <script type="text/javascript" src="jqxcheckbox.js"></script>
+    <script type="text/javascript" src="jqxsplitter.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //set up the splitter (left side is tree, right side is tabbed pages)
+            $("#splitter").jqxSplitter({
+                panels: [{ size: '20%' }, { size: '80%' }],
+                height: '100%'
+            });
+            //set up the tabs
+            $('#tabswidget').jqxTabs({
+                width: '100%',
+                height: '100%',
+                position: 'top',
+                showCloseButtons: true,
+                reorder: true,
+                scrollPosition: 'both'
+            });
+        });
+    </script>
+</head>
+<body class='default'>
+    <div id="splitter">
+        <div class="splitter-panel">
+            West
+        </div>
+        <div class="splitter-panel">
+            <div id="tabswidget">
+                <ul>
+                    <li>Tab 2</li>
+                </ul>
+                <div>
+                    <iframe id="iframe2" src="http://jqwidgets.com" frameborder="0" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" height="100%" width="1000px"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

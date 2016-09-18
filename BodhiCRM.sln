@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BodhiCRM.BLL", "BodhiCRM.BLL\BodhiCRM.BLL.csproj", "{CC2C4D96-AE35-41CE-A442-63C77A18C533}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BodhiCRM.Common", "BodhiCRM.Common\BodhiCRM.Common.csproj", "{2C4EFFE3-64AA-4421-AD2A-1C20BDFB12CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BodhiCRM.DAL", "BodhiCRM.DAL\BodhiCRM.DAL.csproj", "{534B3F7F-5565-49DE-8B93-32DD821FE13B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BodhiCRM.DBUtility", "BodhiCRM.DBUtility\BodhiCRM.DBUtility.csproj", "{2435C11F-8627-40B9-A25D-EA005A937FB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BodhiCRM.Model", "BodhiCRM.Model\BodhiCRM.Model.csproj", "{4B385D42-D9A6-46DC-9569-59B7CCE3081B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BodhiCRM.Web", "BodhiCRM.Web\BodhiCRM.Web.csproj", "{D0D3797B-53FF-4FB1-872E-B346683D5766}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BodhiCRM.Web.Aid", "BodhiCRM.Web.Aid\BodhiCRM.Web.Aid.csproj", "{2E62B267-0A65-4074-AA4F-498934A5BB8E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC2C4D96-AE35-41CE-A442-63C77A18C533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC2C4D96-AE35-41CE-A442-63C77A18C533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC2C4D96-AE35-41CE-A442-63C77A18C533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC2C4D96-AE35-41CE-A442-63C77A18C533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C4EFFE3-64AA-4421-AD2A-1C20BDFB12CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C4EFFE3-64AA-4421-AD2A-1C20BDFB12CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C4EFFE3-64AA-4421-AD2A-1C20BDFB12CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C4EFFE3-64AA-4421-AD2A-1C20BDFB12CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{534B3F7F-5565-49DE-8B93-32DD821FE13B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{534B3F7F-5565-49DE-8B93-32DD821FE13B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{534B3F7F-5565-49DE-8B93-32DD821FE13B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{534B3F7F-5565-49DE-8B93-32DD821FE13B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2435C11F-8627-40B9-A25D-EA005A937FB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2435C11F-8627-40B9-A25D-EA005A937FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2435C11F-8627-40B9-A25D-EA005A937FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2435C11F-8627-40B9-A25D-EA005A937FB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B385D42-D9A6-46DC-9569-59B7CCE3081B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B385D42-D9A6-46DC-9569-59B7CCE3081B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B385D42-D9A6-46DC-9569-59B7CCE3081B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B385D42-D9A6-46DC-9569-59B7CCE3081B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D3797B-53FF-4FB1-872E-B346683D5766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0D3797B-53FF-4FB1-872E-B346683D5766}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0D3797B-53FF-4FB1-872E-B346683D5766}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D3797B-53FF-4FB1-872E-B346683D5766}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E62B267-0A65-4074-AA4F-498934A5BB8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E62B267-0A65-4074-AA4F-498934A5BB8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E62B267-0A65-4074-AA4F-498934A5BB8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E62B267-0A65-4074-AA4F-498934A5BB8E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

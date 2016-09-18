@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e7e03212-07f3-4fb6-b2d5-76891f4e5679" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.0.141:8883/TemplateSMSService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TemplateSMSService.disco" MetadataType="Disco" ID="88a44852-de19-429f-96dc-4a541565d7af" SourceId="1" SourceUrl="http://192.168.0.141:8883/TemplateSMSService.svc?disco" />
+    <MetadataFile FileName="TemplateSMSService.xsd" MetadataType="Schema" ID="283f7a00-53e2-4d7a-afd5-f37d10e4bba4" SourceId="1" SourceUrl="http://192.168.0.141:8883/TemplateSMSService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TemplateSMSService1.xsd" MetadataType="Schema" ID="927bca63-4e47-4d03-a9cf-8df87e6c3d8d" SourceId="1" SourceUrl="http://192.168.0.141:8883/TemplateSMSService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TemplateSMSService2.xsd" MetadataType="Schema" ID="324b197c-58ce-4d76-a838-6e4e12463f40" SourceId="1" SourceUrl="http://192.168.0.141:8883/TemplateSMSService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TemplateSMSService.wsdl" MetadataType="Wsdl" ID="deb2f1ce-a224-4802-b755-bd156cc52400" SourceId="1" SourceUrl="http://192.168.0.141:8883/TemplateSMSService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
