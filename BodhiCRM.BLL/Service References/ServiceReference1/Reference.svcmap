@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4721954d-4e77-4d41-92cc-64b470475da2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="600bbdb8-19d5-41a6-a4f4-5111262fb90b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://192.168.0.141:8883/TemplateSMSService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="TemplateSMSService.disco" MetadataType="Disco" ID="fb38bbc4-bad4-4ba9-b5e1-7241214099a0" SourceId="1" SourceUrl="http://192.168.0.141:8883/TemplateSMSService.svc?disco" />
-    <MetadataFile FileName="TemplateSMSService.xsd" MetadataType="Schema" ID="43953035-34e4-41cc-9300-14f54aef4935" SourceId="1" SourceUrl="http://192.168.0.141:8883/TemplateSMSService.svc?xsd=xsd1" />
-    <MetadataFile FileName="TemplateSMSService1.xsd" MetadataType="Schema" ID="58838143-ce75-48a6-b9ef-93ba8bfa7654" SourceId="1" SourceUrl="http://192.168.0.141:8883/TemplateSMSService.svc?xsd=xsd0" />
-    <MetadataFile FileName="TemplateSMSService2.xsd" MetadataType="Schema" ID="0d7cedae-b462-4e18-b4aa-beb92b469ee4" SourceId="1" SourceUrl="http://192.168.0.141:8883/TemplateSMSService.svc?xsd=xsd2" />
-    <MetadataFile FileName="TemplateSMSService.wsdl" MetadataType="Wsdl" ID="61187d91-44dd-4a04-bde0-360609b5f170" SourceId="1" SourceUrl="http://192.168.0.141:8883/TemplateSMSService.svc?wsdl" />
+    <MetadataFile FileName="TemplateSMSService.disco" MetadataType="Disco" ID="08e8e4da-c877-4ad8-8ca0-87367be9d5af" SourceId="1" SourceUrl="http://192.168.0.141:8883/TemplateSMSService.svc?disco" />
+    <MetadataFile FileName="TemplateSMSService.xsd" MetadataType="Schema" ID="6052e45c-df07-4dc6-829d-1c7109bb1e86" SourceId="1" SourceUrl="http://192.168.0.141:8883/TemplateSMSService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TemplateSMSService1.xsd" MetadataType="Schema" ID="0ad8248e-1fe2-4bc6-aac5-07605fd98bae" SourceId="1" SourceUrl="http://192.168.0.141:8883/TemplateSMSService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TemplateSMSService2.xsd" MetadataType="Schema" ID="5cec69c3-d8cb-4cae-821b-e4f54c163785" SourceId="1" SourceUrl="http://192.168.0.141:8883/TemplateSMSService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TemplateSMSService.wsdl" MetadataType="Wsdl" ID="3d70b802-0793-4e66-be24-026751aa2910" SourceId="1" SourceUrl="http://192.168.0.141:8883/TemplateSMSService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

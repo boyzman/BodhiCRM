@@ -37,7 +37,7 @@ namespace BodhiCRM.Web.sms
         #endregion
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            BodhiCRM.Web.SMSService.TemplateSMSServiceClient smsClient = new SMSService.TemplateSMSServiceClient();
+            //BodhiCRM.Web.SMSService.TemplateSMSServiceClient smsClient = new SMSService.TemplateSMSServiceClient();
             BLL.SMS_MESSAGE bll = new BLL.SMS_MESSAGE();
             string sMobile = Request.Form["hdMobile"].ToString();
             

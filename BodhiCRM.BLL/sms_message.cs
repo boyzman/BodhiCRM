@@ -12,7 +12,7 @@ namespace BodhiCRM.BLL
     /// </summary>
     public partial class SMS_MESSAGE
     {
-        private readonly Model.SYS_CONFIG siteConfig = new BLL.SYS_CONFIG().loadConfig(); //获得站点配置信息
+        //private readonly Model.SYS_CONFIG siteConfig = new BLL.SYS_CONFIG().loadConfig(); //获得站点配置信息
         private readonly BodhiCRM.DAL.SMS_MESSAGE dal = new BodhiCRM.DAL.SMS_MESSAGE();
         public SMS_MESSAGE()
         { }
@@ -178,7 +178,7 @@ namespace BodhiCRM.BLL
         /// <returns>bool</returns>
         public bool Send(string mobiles, string names, string content, List<string> arrData,string call_index, out string msg)
         {
-            SMSService.TemplateSMSServiceClient smsClient = new SMSService.TemplateSMSServiceClient();
+            ServiceReference1.TemplateSMSServiceClient smsClient = new ServiceReference1.TemplateSMSServiceClient();
             Model.SMS_MESSAGE model = new Model.SMS_MESSAGE();
             Model.SMS_TEMPLATE model_t = new Model.SMS_TEMPLATE();
             BLL.SMS_TEMPLATE bll_t=new BLL.SMS_TEMPLATE();

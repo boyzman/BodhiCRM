@@ -8,19 +8,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BodhiCRM.BLL.SMSService {
+namespace BodhiCRM.BLL.ServiceReference1 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SMSService.ITemplateSMSService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.ITemplateSMSService")]
     public interface ITemplateSMSService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITemplateSMSService/SendTemplateSMSS", ReplyAction="http://tempuri.org/ITemplateSMSService/SendTemplateSMSSResponse")]
-        BodhiCRM.BLL.SMSService.SendTemplateSMSSResponse SendTemplateSMSS(BodhiCRM.BLL.SMSService.SendTemplateSMSSRequest request);
+        BodhiCRM.BLL.ServiceReference1.SendTemplateSMSSResponse SendTemplateSMSS(BodhiCRM.BLL.ServiceReference1.SendTemplateSMSSRequest request);
         
         // CODEGEN: 正在生成消息协定，应为该操作具有多个返回值。
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITemplateSMSService/SendTemplateSMSS", ReplyAction="http://tempuri.org/ITemplateSMSService/SendTemplateSMSSResponse")]
-        System.Threading.Tasks.Task<BodhiCRM.BLL.SMSService.SendTemplateSMSSResponse> SendTemplateSMSSAsync(BodhiCRM.BLL.SMSService.SendTemplateSMSSRequest request);
+        System.Threading.Tasks.Task<BodhiCRM.BLL.ServiceReference1.SendTemplateSMSSResponse> SendTemplateSMSSAsync(BodhiCRM.BLL.ServiceReference1.SendTemplateSMSSRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -68,12 +68,12 @@ namespace BodhiCRM.BLL.SMSService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ITemplateSMSServiceChannel : BodhiCRM.BLL.SMSService.ITemplateSMSService, System.ServiceModel.IClientChannel {
+    public interface ITemplateSMSServiceChannel : BodhiCRM.BLL.ServiceReference1.ITemplateSMSService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class TemplateSMSServiceClient : System.ServiceModel.ClientBase<BodhiCRM.BLL.SMSService.ITemplateSMSService>, BodhiCRM.BLL.SMSService.ITemplateSMSService {
+    public partial class TemplateSMSServiceClient : System.ServiceModel.ClientBase<BodhiCRM.BLL.ServiceReference1.ITemplateSMSService>, BodhiCRM.BLL.ServiceReference1.ITemplateSMSService {
         
         public TemplateSMSServiceClient() {
         }
@@ -95,21 +95,21 @@ namespace BodhiCRM.BLL.SMSService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BodhiCRM.BLL.SMSService.SendTemplateSMSSResponse BodhiCRM.BLL.SMSService.ITemplateSMSService.SendTemplateSMSS(BodhiCRM.BLL.SMSService.SendTemplateSMSSRequest request) {
+        BodhiCRM.BLL.ServiceReference1.SendTemplateSMSSResponse BodhiCRM.BLL.ServiceReference1.ITemplateSMSService.SendTemplateSMSS(BodhiCRM.BLL.ServiceReference1.SendTemplateSMSSRequest request) {
             return base.Channel.SendTemplateSMSS(request);
         }
         
         public bool SendTemplateSMSS(string templateKey, string toTel, string[] sendData, out string outMsg) {
-            BodhiCRM.BLL.SMSService.SendTemplateSMSSRequest inValue = new BodhiCRM.BLL.SMSService.SendTemplateSMSSRequest();
+            BodhiCRM.BLL.ServiceReference1.SendTemplateSMSSRequest inValue = new BodhiCRM.BLL.ServiceReference1.SendTemplateSMSSRequest();
             inValue.templateKey = templateKey;
             inValue.toTel = toTel;
             inValue.sendData = sendData;
-            BodhiCRM.BLL.SMSService.SendTemplateSMSSResponse retVal = ((BodhiCRM.BLL.SMSService.ITemplateSMSService)(this)).SendTemplateSMSS(inValue);
+            BodhiCRM.BLL.ServiceReference1.SendTemplateSMSSResponse retVal = ((BodhiCRM.BLL.ServiceReference1.ITemplateSMSService)(this)).SendTemplateSMSS(inValue);
             outMsg = retVal.outMsg;
             return retVal.SendTemplateSMSSResult;
         }
         
-        public System.Threading.Tasks.Task<BodhiCRM.BLL.SMSService.SendTemplateSMSSResponse> SendTemplateSMSSAsync(BodhiCRM.BLL.SMSService.SendTemplateSMSSRequest request) {
+        public System.Threading.Tasks.Task<BodhiCRM.BLL.ServiceReference1.SendTemplateSMSSResponse> SendTemplateSMSSAsync(BodhiCRM.BLL.ServiceReference1.SendTemplateSMSSRequest request) {
             return base.Channel.SendTemplateSMSSAsync(request);
         }
     }

@@ -36,6 +36,7 @@ namespace BodhiCRM.Model
         private string _smsapiurl = "";
         private string _smsusername = "";
         private string _smspassword = "";
+        private int _smstimer = 60000;
 
         private string _emailsmtp = "";
         private int _emailssl = 0;
@@ -244,6 +245,14 @@ namespace BodhiCRM.Model
         {
             get { return _smspassword; }
             set { _smspassword = value; }
+        }
+        /// <summary>
+        /// 短信定时发送间隔时间
+        /// </summary>
+        public int smstimer
+        {
+            get { return _smstimer; }
+            set { _smstimer = value; }
         }
         #endregion
 
