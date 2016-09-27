@@ -80,9 +80,9 @@ namespace BodhiCRM.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into TB_PATIENT(");
-			strSql.Append("PATIENT_SN,CNAME,GENDER_ID,BIRTH_DATE,HEIGHT,WEIGHT,MOBILE_TEL,E_MAIL,HOME_PROVINCE_ID,HOME_CITY_ID,HOME_SECTION_ID,ADDRESS,ID_CARD_CODE,CREATE_USER_ID,CREATE_TIME,MODIFIED_USER,MODIFIED_TIME,STATUS,REMARK)");
+			strSql.Append("PATIENT_SN,CNAME,GENDER_ID,BIRTH_DATE,HEIGHT,WEIGHT,MOBILE_TEL,E_MAIL,HOME_PROVINCE_ID,HOME_CITY_ID,HOME_SECTION_ID,ADDRESS,ID_CARD_CODE,CREATE_USER_ID,CREATE_TIME,MODIFIED_USER,MODIFIED_TIME,STATUS,REMARK,LABEL)");
 			strSql.Append(" values (");
-			strSql.Append(":PATIENT_SN,:CNAME,:GENDER_ID,:BIRTH_DATE,:HEIGHT,:WEIGHT,:MOBILE_TEL,:E_MAIL,:HOME_PROVINCE_ID,:HOME_CITY_ID,:HOME_SECTION_ID,:ADDRESS,:ID_CARD_CODE,:CREATE_USER_ID,:CREATE_TIME,:MODIFIED_USER,:MODIFIED_TIME,:STATUS,:REMARK)");
+			strSql.Append(":PATIENT_SN,:CNAME,:GENDER_ID,:BIRTH_DATE,:HEIGHT,:WEIGHT,:MOBILE_TEL,:E_MAIL,:HOME_PROVINCE_ID,:HOME_CITY_ID,:HOME_SECTION_ID,:ADDRESS,:ID_CARD_CODE,:CREATE_USER_ID,:CREATE_TIME,:MODIFIED_USER,:MODIFIED_TIME,:STATUS,:REMARK,:LABEL)");
 			OracleParameter[] parameters = {
 					new OracleParameter(":PATIENT_SN", OracleType.VarChar,10),
 					new OracleParameter(":CNAME", OracleType.VarChar,60),
@@ -105,7 +105,8 @@ namespace BodhiCRM.DAL
 					new OracleParameter(":MODIFIED_USER", OracleType.Number,4),
 					new OracleParameter(":MODIFIED_TIME", OracleType.DateTime),
                     new OracleParameter(":STATUS", OracleType.VarChar,1),
-					new OracleParameter(":REMARK", OracleType.VarChar,1000)};
+					new OracleParameter(":REMARK", OracleType.VarChar,1000),
+                    new OracleParameter(":LABEL", OracleType.VarChar,200)};
 			parameters[0].Value = model.PATIENT_SN;
 			parameters[1].Value = model.CNAME;
 			
@@ -128,7 +129,7 @@ namespace BodhiCRM.DAL
             parameters[16].Value = model.CREATE_TIME;
             parameters[17].Value = model.STATUS;
 			parameters[18].Value = model.REMARK;
-
+            parameters[19].Value = model.LABEL;
 			int rows=DbHelperOra.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
 			{
@@ -165,7 +166,8 @@ namespace BodhiCRM.DAL
 			strSql.Append("CREATE_TIME=:CREATE_TIME,");
 			strSql.Append("MODIFIED_USER=:MODIFIED_USER,");
 			strSql.Append("MODIFIED_TIME=:MODIFIED_TIME,");
-			strSql.Append("REMARK=:REMARK");
+			strSql.Append("REMARK=:REMARK,");
+            strSql.Append("LABEL=:LABEL");
 			strSql.Append(" where PATIENT_SN=:PATIENT_SN ");
 			OracleParameter[] parameters = {
 					new OracleParameter(":CNAME", OracleType.VarChar,60),
@@ -188,6 +190,7 @@ namespace BodhiCRM.DAL
 					new OracleParameter(":MODIFIED_USER", OracleType.Number,4),
 					new OracleParameter(":MODIFIED_TIME", OracleType.DateTime),
 					new OracleParameter(":REMARK", OracleType.VarChar,1000),
+                    new OracleParameter(":LABEL", OracleType.VarChar,200),
 					new OracleParameter(":PATIENT_SN", OracleType.VarChar,10)};
 			parameters[0].Value = model.CNAME;
 			parameters[1].Value = model.ENAME;
@@ -209,7 +212,8 @@ namespace BodhiCRM.DAL
 			parameters[17].Value = model.MODIFIED_USER;
 			parameters[18].Value = model.MODIFIED_TIME;
 			parameters[19].Value = model.REMARK;
-			parameters[20].Value = model.PATIENT_SN;
+            parameters[20].Value = model.LABEL;
+			parameters[21].Value = model.PATIENT_SN;
 
 			int rows=DbHelperOra.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -272,7 +276,7 @@ namespace BodhiCRM.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select PATIENT_SN,CNAME,ENAME,GENDER_ID,BIRTH_DATE,HEIGHT,WEIGHT,HOME_TEL,MOBILE_TEL,E_MAIL,HOME_PROVINCE_ID,HOME_CITY_ID,HOME_SECTION_ID,ADDRESS,POST_CODE,ID_CARD_CODE,CREATE_USER_ID,CREATE_TIME,MODIFIED_USER,MODIFIED_TIME,REMARK,STATUS from TB_PATIENT ");
+			strSql.Append("select PATIENT_SN,CNAME,ENAME,GENDER_ID,BIRTH_DATE,HEIGHT,WEIGHT,HOME_TEL,MOBILE_TEL,E_MAIL,HOME_PROVINCE_ID,HOME_CITY_ID,HOME_SECTION_ID,ADDRESS,POST_CODE,ID_CARD_CODE,CREATE_USER_ID,CREATE_TIME,MODIFIED_USER,MODIFIED_TIME,REMARK,STATUS,LABEL from TB_PATIENT ");
 			strSql.Append(" where PATIENT_SN=:PATIENT_SN ");
 			OracleParameter[] parameters = {
 					new OracleParameter(":PATIENT_SN", OracleType.VarChar,10)			};
@@ -296,7 +300,7 @@ namespace BodhiCRM.DAL
         public BodhiCRM.Model.PATIENT GetModelByMobile(string MOBILE_TEL)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select PATIENT_SN,CNAME,ENAME,GENDER_ID,BIRTH_DATE,HEIGHT,WEIGHT,HOME_TEL,MOBILE_TEL,E_MAIL,HOME_PROVINCE_ID,HOME_CITY_ID,HOME_SECTION_ID,ADDRESS,POST_CODE,ID_CARD_CODE,CREATE_USER_ID,CREATE_TIME,MODIFIED_USER,MODIFIED_TIME,REMARK,STATUS from TB_PATIENT ");
+            strSql.Append("select PATIENT_SN,CNAME,ENAME,GENDER_ID,BIRTH_DATE,HEIGHT,WEIGHT,HOME_TEL,MOBILE_TEL,E_MAIL,HOME_PROVINCE_ID,HOME_CITY_ID,HOME_SECTION_ID,ADDRESS,POST_CODE,ID_CARD_CODE,CREATE_USER_ID,CREATE_TIME,MODIFIED_USER,MODIFIED_TIME,REMARK,STATUS,LABEL from TB_PATIENT ");
             strSql.Append(" where MOBILE_TEL=:MOBILE_TEL ");
             OracleParameter[] parameters = {
 					new OracleParameter(":MOBILE_TEL", OracleType.VarChar,30)			};
@@ -406,6 +410,10 @@ namespace BodhiCRM.DAL
                     model.STATUS = row["STATUS"].ToString();
                 }
 			    model.REMARK=row["REMARK"].ToString();
+                if (row["LABEL"] != null)
+                {
+                    model.LABEL = row["LABEL"].ToString();
+                }
 			}
 			return model;
 		}
@@ -416,7 +424,7 @@ namespace BodhiCRM.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-            strSql.Append("select PATIENT_SN,CNAME,ENAME,GENDER_ID,BIRTH_DATE,HEIGHT,WEIGHT,HOME_TEL,MOBILE_TEL,E_MAIL,HOME_PROVINCE_ID,HOME_CITY_ID,HOME_SECTION_ID,ADDRESS,POST_CODE,ID_CARD_CODE,CREATE_USER_ID,CREATE_TIME,MODIFIED_USER,MODIFIED_TIME,STATUS,REMARK ");
+            strSql.Append("select PATIENT_SN,CNAME,ENAME,GENDER_ID,BIRTH_DATE,HEIGHT,WEIGHT,HOME_TEL,MOBILE_TEL,E_MAIL,HOME_PROVINCE_ID,HOME_CITY_ID,HOME_SECTION_ID,ADDRESS,POST_CODE,ID_CARD_CODE,CREATE_USER_ID,CREATE_TIME,MODIFIED_USER,MODIFIED_TIME,STATUS,REMARK,LABEL ");
 			strSql.Append(" FROM TB_PATIENT ");
 			if(strWhere.Trim()!="")
 			{
@@ -502,7 +510,7 @@ namespace BodhiCRM.DAL
         public DataSet GetList(int pageSize, int pageIndex, string strWhere, string filedOrder, out int recordCount)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select PATIENT_SN,CNAME,ENAME,GENDER_ID,BIRTH_DATE,HEIGHT,WEIGHT,HOME_TEL,MOBILE_TEL,E_MAIL,HOME_PROVINCE_ID,HOME_CITY_ID,HOME_SECTION_ID,ADDRESS,POST_CODE,ID_CARD_CODE,CREATE_USER_ID,CREATE_TIME,MODIFIED_USER,MODIFIED_TIME,STATUS,REMARK FROM TB_PATIENT");
+            strSql.Append("select PATIENT_SN,CNAME,ENAME,GENDER_ID,BIRTH_DATE,HEIGHT,WEIGHT,HOME_TEL,MOBILE_TEL,E_MAIL,HOME_PROVINCE_ID,HOME_CITY_ID,HOME_SECTION_ID,ADDRESS,POST_CODE,ID_CARD_CODE,CREATE_USER_ID,CREATE_TIME,MODIFIED_USER,MODIFIED_TIME,STATUS,REMARK,LABEL FROM TB_PATIENT");
             if (strWhere.Trim() != "")
             {
                 strSql.Append(" where " + strWhere);

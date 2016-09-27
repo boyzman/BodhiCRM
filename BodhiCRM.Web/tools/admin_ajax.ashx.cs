@@ -19,7 +19,6 @@ namespace BodhiCRM.Web.tools
     {
         Model.SYS_CONFIG siteConfig = new BLL.SYS_CONFIG().loadConfig(); //系统配置信息
 
-
         public void ProcessRequest(HttpContext context)
         {
             //检查管理员是否登录

@@ -48,6 +48,7 @@ namespace BodhiCRM.Model
 		private DateTime? _modified_time;
         private string _status;
 		private string _remark;
+        private string _label;
 		/// <summary>
 		/// 病历号
 		/// </summary>
@@ -224,6 +225,14 @@ namespace BodhiCRM.Model
 			set{ _remark=value;}
 			get{return _remark;}
 		}
+        /// <summary>
+        /// 标签
+        /// </summary>
+        public string LABEL
+        {
+            set { _label = value; }
+            get { return _label; }
+        }
 		#endregion Model
 
 	}

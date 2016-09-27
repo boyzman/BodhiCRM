@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="birthcare_list.aspx.cs" Inherits="BodhiCRM.Web.basic.birthcare_list" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="label_list.aspx.cs" Inherits="BodhiCRM.Web.basic.label_list" %>
 <%@ Import Namespace="BodhiCRM.Common" %>
 
 <!DOCTYPE html>
@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>生日关怀信息</title>
+    <title>标签信息</title>
     <link href="../scripts/artdialog/ui-dialog.css" rel="stylesheet" type="text/css" />
     <link href="../skin/default/style.css" rel="stylesheet" type="text/css" />
     <link href="../css/pagination.css" rel="stylesheet" type="text/css" />
@@ -16,30 +16,14 @@
     <script type="text/javascript" charset="utf-8" src="../js/laymain.js"></script>
     <script type="text/javascript" charset="utf-8" src="../js/common.js"></script>
     <script type="text/javascript" charset="utf-8" src="../scripts/datepicker/WdatePicker.js"></script>
-    <script type="text/javascript">
-        //初始化搜索框提示
+   <%-- <script type="text/javascript">
         $(function () {
             var arr = [{ 'id': 'txtKeywords', 'desc': '患者姓名、医师姓名' }];
             for (var i = 0; i < arr.length; i++) {
                 watermark(arr[i].id, arr[i].desc);
             }
         });
-
-        //初始化病患选择
-        function showSmsDialog(pSN) {
-            var d = top.dialog({
-                width: 600,
-                height: 300,
-                id: 'smsDialogId',
-                padding: 0,
-                title: "发送短信",
-                url: 'dialog/dialog_sendsms.aspx?patient_sn='+pSN,
-               
-            }).showModal();
-            //将容器对象传进去
-            //d.data = obj;
-        }
-     </script>
+     </script>--%>
 </head>
 
 <body class="mainbody">
@@ -49,7 +33,7 @@
             <a href="javascript:history.back(-1);" class="back"><i></i><span>返回上一页</span></a>
             <a href="../center.aspx" class="home"><i></i><span>首页</span></a>
             <i class="arrow"></i>
-            <span>生日关怀信息</span>
+            <span>标签信息</span>
         </div>
         <!--/导航栏-->
 
@@ -60,7 +44,7 @@
                     <a class="menu-btn"></a>
                     <div class="l-list">
                         <ul class="icon-list">
-                            <li><a class="add" href="birthcare_edit.aspx?action=<%=DTEnums.ActionEnum.Add %>"><i></i><span>新增</span></a></li>
+                            <li><a class="add" href="label_edit.aspx?action=<%=DTEnums.ActionEnum.Add %>"><i></i><span>新增</span></a></li>
 
                             <li><a class="all" href="javascript:;" onclick="checkAll(this);"><i></i><span>全选</span></a></li>
                             <li>
@@ -72,11 +56,7 @@
                             </div>                
                         </div>--%>
                     </div>
-                    <div class="r-list">  
-                       
-                        <%--<asp:TextBox ID="txtVisitdt" runat="server" CssClass="input rule-date-input" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" ToolTip="探访日期" /> --%>
-                     
-                      <%-- <asp:LinkButton ID="lbtnSearch_dt" runat="server" CssClass="btn-search" OnClick="btnSearch_dt_Click">查询</asp:LinkButton>--%>             
+                    <div class="r-list">            
                         <asp:TextBox ID="txtKeywords" runat="server" CssClass="keywords" /> 
                         <asp:LinkButton ID="lbtnSearch" runat="server" CssClass="btn-searchs" OnClick="btnSearch_Click" >查询</asp:LinkButton>
                            
@@ -93,16 +73,9 @@
                     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="ltable">
                         <tr>
                             <th align="center" width="5%">选择</th>
-                            <th align="center" width="10%">患者姓名</th>
-                            <th align="center" width="10%">患者病历号</th>
-                            <th align="center" width="10%">患者生日</th>
-                             <th align="center" width="5%">距生日剩余天数</th>
-                            <th align="center" width="5%">科室</th>
-                            <th align="center" width="10%">礼物名称</th>
-                            <th align="center" width="5%">礼物领取方式</th>
-                            <th align="center" width="5%">礼物价值</th>
-                            <th align="center" width="10%">领取时间</th>
-                            <th align="center" width="15%">备注</th>
+                            <th align="center" width="12%">标签名称</th>
+                            <th align="center" width="12%">标签类型</th>
+                            <th align="center" width="12%">状态</th>
                             <th align="center" width="5%">操作</th>
                         </tr>
                 </HeaderTemplate>
@@ -112,23 +85,10 @@
                             <asp:CheckBox ID="chkId" CssClass="checkall" runat="server" Style="vertical-align: middle;" />
                             <asp:HiddenField ID="hidId" Value='<%#Eval("ID")%>' runat="server" />
                         </td>
-                        <td align="center">
-                            <div class="user-box">
-                                <h4><b><%#Eval("PNAME").ToString()%></b> </h4>
-                            </div>
-                        </td>
-                        <td align="center"><%#Eval("PATIENT_SN")%></td>
-                        <td align="center"><%#Eval("BIRTH_DATE")%></td>
-                        <td align="center"><%#Eval("BDAYS")%></td>
-                        <td align="center">
-                            <%#Eval("DNAME").ToString()==""?"无":Eval("DNAME").ToString() %>
-                        </td>
-                        <td align="center"><%#Eval("GIFT_NAME")%></td>
-                        <td align="center"><%#Eval("GIFT_PAYMENT")%></td>
-                        <td align="center"><%#Eval("GIFT_VALUE")%></td>
-                        <td align="center"><%#Eval("GIFT_GETDT","{0:yyyy-MM-dd}")%></td>
-                        <td align="center"><%#Eval("REMARK")%></td>
-                        <td align="center"><a href="birthcare_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("ID")%>">修改</a>&nbsp;&nbsp;&nbsp;<a style="cursor:pointer" onclick="showSmsDialog('<%#Eval("PATIENT_SN")%>');">发送短信</a></td>
+                        <td align="center"><%#Eval("LABEL_NAME")%></td>
+                        <td align="center"><%#Eval("LABEL_TYPE")%></td>
+                        <td align="center"><%#Eval("STATUS").ToString().Trim() == "Y" ? "正常" : "无效"%></td>
+                        <td align="center"><a href="label_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("ID")%>">修改</a></td>
                     </tr>
                 </ItemTemplate>
                 <FooterTemplate>

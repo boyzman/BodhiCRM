@@ -49,6 +49,10 @@
     <Compile Include="MANAGER_LOG.cs" />
     <Compile Include="MANAGER_ROLE.cs" />
     <Compile Include="MANAGER_ROLE_VALUE.cs" />
+    <Compile Include="M_GIFTINFO.cs" />
+    <Compile Include="M_LABEL.cs" />
+    <Compile Include="M_VALUESET.cs" />
+    <Compile Include="M_VIPSET.cs" />
     <Compile Include="NAVIGATION.cs" />
     <Compile Include="PATIENT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

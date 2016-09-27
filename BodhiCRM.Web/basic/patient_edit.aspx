@@ -153,6 +153,14 @@
     </dd>
   </dl>
   <dl>
+    <dt>患者标签</dt>
+    <dd>
+      <div class="rule-multi-porp">
+          <asp:CheckBoxList ID="cblLabel" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow"></asp:CheckBoxList>
+      </div>
+    </dd>
+  </dl>
+  <dl>
     <dt>备注</dt>
     <dd><asp:TextBox TextMode="MultiLine" ID="txtRemark" runat="server" CssClass="input normal"></asp:TextBox> </dd>
   </dl> 

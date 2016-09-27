@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BodhiCRM.Common;
+using System.Data;
 
 namespace BodhiCRM.Web.basic
 {
@@ -35,6 +36,7 @@ namespace BodhiCRM.Web.basic
             if (!Page.IsPostBack)
             {
                 ChkAdminLevel("patient_list", DTEnums.ActionEnum.View.ToString()); //检查权限
+                LabelBind(); //绑定标签
                 //Model.MANAGER model = GetAdminInfo(); //取得管理员信息
                 if (action == DTEnums.ActionEnum.Edit.ToString()) //修改
                 {
@@ -65,6 +67,9 @@ namespace BodhiCRM.Web.basic
             txtIdcard.Text = model.ID_CARD_CODE;
             txtIdcard.ReadOnly = true;
             txtIdcard.Attributes.Remove("ajaxurl");
+            txtTel.Text = model.MOBILE_TEL;
+            txtTel.ReadOnly = true;
+            txtTel.Attributes.Remove("ajaxurl");
             txtCNAME.Text = model.CNAME;
             if (model.GENDER_ID == 1)
             {
@@ -83,13 +88,37 @@ namespace BodhiCRM.Web.basic
             txtHeight.Text = model.HEIGHT.ToString();
             txtWeight.Text = model.WEIGHT.ToString();
             txtAddress.Text = model.ADDRESS;
-            txtTel.Text = model.MOBILE_TEL;
+           
             txtEMAIL.Text = model.E_MAIL;
             areaAll = model.HOME_PROVINCE_ID + "," + model.HOME_CITY_ID + "," + model.HOME_SECTION_ID;
             txtRemark.Text = model.REMARK;
+            //赋值标签
+            string[] LabelArr = model.LABEL.Split(',');
+            for (int i = 0; i < cblLabel.Items.Count; i++)
+            {
+                for (int n = 0; n < LabelArr.Length; n++)
+                {
+                    if (LabelArr[n].ToLower() == cblLabel.Items[i].Value.ToLower())
+                    {
+                        cblLabel.Items[i].Selected = true;
+                    }
+                }
+            }
         }
         #endregion
-
+        #region 绑定操作权限类型=========================
+        private void LabelBind()
+        {
+            cblLabel.Items.Clear();
+            BLL.M_LABEL bll_label = new BLL.M_LABEL();
+            DataTable dt = bll_label.GetList(" status='Y'").Tables[0];
+            Dictionary<string, string> dic = dt.Rows.Cast<DataRow>().ToDictionary(x => x["ID"].ToString(), x => x["LABEL_NAME"].ToString()); 
+            foreach (KeyValuePair<string, string> kvp in dic)
+            {
+                cblLabel.Items.Add(new ListItem(kvp.Value, kvp.Key));
+            }
+        }
+        #endregion
         #region 增加操作=================================
         private bool DoAdd()
         {
@@ -132,6 +161,16 @@ namespace BodhiCRM.Web.basic
             {
                 model.STATUS = "N";
             }
+            //添加患者标签
+            string label_str = string.Empty;
+            for (int i = 0; i < cblLabel.Items.Count; i++)
+            {
+                if (cblLabel.Items[i].Selected )
+                {
+                    label_str += cblLabel.Items[i].Value + ",";
+                }
+            }
+            model.LABEL = Utils.DelLastComma(label_str);
             if (bll.Add(model))
             {
                 AddAdminLog(DTEnums.ActionEnum.Add.ToString(), "添加病患信息:" + model.PATIENT_SN); //记录日志
@@ -184,6 +223,16 @@ namespace BodhiCRM.Web.basic
             {
                 model.STATUS = "N";
             }
+            //添加患者标签
+            string label_str = string.Empty;
+            for (int i = 0; i < cblLabel.Items.Count; i++)
+            {
+                if (cblLabel.Items[i].Selected)
+                {
+                    label_str += cblLabel.Items[i].Value + ",";
+                }
+            }
+            model.LABEL = Utils.DelLastComma(label_str);
             if (bll.Update(model))
             {
                 AddAdminLog(DTEnums.ActionEnum.Edit.ToString(), "修改病患信息:" + model.PATIENT_SN); //记录日志

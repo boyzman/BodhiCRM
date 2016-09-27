@@ -8,6 +8,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <title>选择病患信息</title>
 <link href="../skin/default/style.css" rel="stylesheet" type="text/css" />
+<link href="../skin/default/pagination.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" charset="utf-8" src="../scripts/jquery/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="../scripts/webuploader/webuploader.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="../js/uploader.js"></script>

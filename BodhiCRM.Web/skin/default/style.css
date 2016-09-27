@@ -395,7 +395,7 @@ textarea.input{ width:300px; height:65px; }
 	.spec-item li a i{ display:inline-block; padding:3px 9px; font-style:normal; line-height:20px; }
 	.spec-item li a img{ width:32px; height:32px; vertical-align:middle; }
 	.spec-item li:after{ content:"."; display:none; position:absolute; right:0; bottom:0; width:12px; height:12px; text-indent:-99em; background:url(skin_icons.png) -169px -85px no-repeat; overflow:hidden; }
-	.spec-item li.selected a{ margin:-1px; color:#333; border:2px solid #1e99c7; }
+	.spec-item li.selected a{ margin:-1px; color:#333; border:2px solid #7EB826; }
 	.spec-item li.selected:after{ display:block; background-position:-84px -196px; }
 	
 /*表格样式*/
@@ -477,7 +477,7 @@ textarea.input{ width:300px; height:65px; }
 	.multi-porp ul li a{ display:block; padding:4px 10px; color:#666; min-width:10px; width:auto !important;  text-align:center; text-decoration:none; border:1px solid #eee; cursor:pointer; white-space:nowrap; text-overflow:ellipsis; }
 	.multi-porp ul li i{ display:none; position:absolute; right:0; bottom:0; width:12px; height:12px; text-indent:-99em; background:url(skin_icons.png) -169px -85px no-repeat; overflow:hidden; }
 	.multi-porp ul li.sys{ background:#FFFFD0; }
-	.multi-porp ul li.selected a{ margin:-1px; color:#333; border:2px solid #1e99c7; }
+	.multi-porp ul li.selected a{ margin:-1px; color:#333; border:2px solid #7EB826; }
 	.multi-porp ul li.selected i{ display:block; background-position:-84px -196px; }
 /*下拉菜单*/
 .single-select{ position:relative; display:inline-block; margin-right:5px; vertical-align:middle; cursor:pointer; *float:left; }

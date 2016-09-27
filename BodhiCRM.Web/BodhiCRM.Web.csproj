@@ -28,6 +28,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -73,12 +74,15 @@
     <Content Include="basic\patient_list.aspx" />
     <Content Include="dialog\dialog_patient_multi.aspx" />
     <Content Include="dialog\dialog_patient.aspx" />
+    <Content Include="dialog\dialog_sendsms.aspx" />
     <Content Include="dialog\dialog_visit_update.aspx" />
     <Content Include="js\dateformat.js" />
     <Content Include="js\JSLoading.js" />
     <Content Include="js\laytab.js" />
     <Content Include="js\laymain.js" />
     <Content Include="js\msgbox.js" />
+    <Content Include="marketing\label_edit.aspx" />
+    <Content Include="marketing\label_list.aspx" />
     <Content Include="scripts\artdialog\dialog-min.js" />
     <Content Include="scripts\artdialog\dialog-plus-min.js" />
     <Content Include="scripts\artdialog\ui-dialog.css" />
@@ -245,16 +249,6 @@
     <Content Include="scripts\Tabs\tabs.html" />
     <Content Include="scripts\webuploader\uploader.swf" />
     <Content Include="scripts\webuploader\webuploader.min.js" />
-    <Content Include="Service References\SMSService\BodhiCRM.Web.SMSService.SendTemplateSMSSResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Service References\SMSService\TemplateSMSService.disco" />
-    <None Include="Service References\SMSService\configuration91.svcinfo" />
-    <None Include="Service References\SMSService\configuration.svcinfo" />
-    <None Include="Service References\SMSService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="skin\default\arrows.png" />
     <Content Include="skin\default\nav\mail.png" />
     <Content Include="skin\default\pagination.css" />
@@ -269,16 +263,7 @@
     <Content Include="test\order.aspx" />
     <Content Include="tools\admin_ajax.ashx" />
     <Content Include="tools\upload_ajax.ashx" />
-    <None Include="Service References\SMSService\TemplateSMSService.wsdl" />
-    <None Include="Service References\SMSService\TemplateSMSService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SMSService\TemplateSMSService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SMSService\TemplateSMSService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Properties\PublishProfiles\bodhicrm.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -435,6 +420,13 @@
     <Compile Include="dialog\dialog_patient.aspx.designer.cs">
       <DependentUpon>dialog_patient.aspx</DependentUpon>
     </Compile>
+    <Compile Include="dialog\dialog_sendsms.aspx.cs">
+      <DependentUpon>dialog_sendsms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dialog\dialog_sendsms.aspx.designer.cs">
+      <DependentUpon>dialog_sendsms.aspx</DependentUpon>
+    </Compile>
     <Compile Include="dialog\dialog_visit_update.aspx.cs">
       <DependentUpon>dialog_visit_update.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -498,12 +490,21 @@
     <Compile Include="manager\role_list.aspx.designer.cs">
       <DependentUpon>role_list.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\SMSService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
+    <Compile Include="marketing\label_edit.aspx.cs">
+      <DependentUpon>label_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="marketing\label_edit.aspx.designer.cs">
+      <DependentUpon>label_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="marketing\label_list.aspx.cs">
+      <DependentUpon>label_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="marketing\label_list.aspx.designer.cs">
+      <DependentUpon>label_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="settings\nav_edit.aspx.cs">
       <DependentUpon>nav_edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -641,12 +642,6 @@
       <Project>{2e62b267-0a65-4074-aa4f-498934a5bb8e}</Project>
       <Name>BodhiCRM.Web.Aid</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\SMSService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
